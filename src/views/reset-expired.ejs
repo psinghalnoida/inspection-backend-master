@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Link Expired - ClaimsMitra</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: #ffffff;
+      padding: 50px 40px;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      max-width: 450px;
+      text-align: center;
+    }
+
+    .error-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #ef5350 0%, #c62828 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px;
+      animation: shake 0.5s ease;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      75% { transform: translateX(5px); }
+    }
+
+    .error-icon svg {
+      width: 40px;
+      height: 40px;
+      fill: #fff;
+    }
+
+    .logo h1 {
+      color: #667eea;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .logo p {
+      color: #888;
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    h2 {
+      color: #c62828;
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+
+    .message {
+      color: #666;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 40px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+    }
+
+    .reasons {
+      background: #fff3e0;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 25px;
+      text-align: left;
+    }
+
+    .reasons h4 {
+      color: #e65100;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .reasons ul {
+      margin-left: 20px;
+      font-size: 13px;
+      color: #666;
+    }
+
+    .reasons li {
+      margin-bottom: 5px;
+    }
+
+    .contact {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #888;
+    }
+
+    .contact a {
+      color: #667eea;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="error-icon">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+      </svg>
+    </div>
+
+    <div class="logo">
+      <h1>ClaimsMitra</h1>
+      <p>Survey Management Platform</p>
+    </div>
+
+    <h2>Link Expired or Invalid</h2>
+    
+    <p class="message">
+      <% if (typeof message !== 'undefined' && message) { %>
+        <%= message %>
+      <% } else { %>
+        The password reset link you clicked is no longer valid. This can happen for several reasons.
+      <% } %>
+    </p>
+
+    <a href="/" class="btn">Request New Link</a>
+
+    <div class="reasons">
+      <h4>This could happen because:</h4>
+      <ul>
+        <li>The link has expired (valid for 1 hour only)</li>
+        <li>The link has already been used</li>
+        <li>The link was copied incorrectly</li>
+      </ul>
+    </div>
+
+    <p class="contact">
+      Still having trouble? <a href="mailto:support@claimsmitra.com">Contact Support</a>
+    </p>
+  </div>
+</body>
+</html>
